@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './auth-header.scss',
 })
 export class AuthHeader implements OnInit {
-  private themeService = inject(ThemeService);
+  themeService = inject(ThemeService);
   private renderer = inject(Renderer2);
   private document = inject(DOCUMENT);
   ShowAccountDropdown = signal(false);
@@ -19,36 +19,34 @@ export class AuthHeader implements OnInit {
   NavUrls!: Array<IListItemInfo>;
 
   SAD() {
-    this.ShowAccountDropdown.set(!this.ShowAccountDropdown());
+    this.ShowSearchBox.update((value) => false);
+    this.ShowMobileNav.update((value) => false);
+    this.ShowAccountDropdown.update((value) => !value);
   }
 
   SSB() {
-    this.ShowSearchBox.set(!this.ShowSearchBox());
+    this.ShowMobileNav.update((value) => false);
+    this.ShowAccountDropdown.update((value) => false);
+    this.ShowSearchBox.update((value) => !value);
   }
   SMN() {
-    const body = this.document.body;
-    this.ShowMobileNav.update((value) => !value); // تبديل القيمة
-
-    if (this.ShowMobileNav()) {
-      this.renderer.addClass(body, 'mobile-nav-active');
-    } else {
-      this.renderer.removeClass(body, 'mobile-nav-active');
-    }
+    this.ShowAccountDropdown.update((value) => false);
+    this.ShowSearchBox.update((value) => false);
+    this.ShowMobileNav.update((value) => !value);
   }
   ngOnInit() {
     // Safely initializes theme based on browser storage
     this.themeService.initTheme();
     this.NavUrls = [
-      { Title: 'Home', Path: '/home' },
-      { Title: 'About', Path: '/about' },
-      { Title: 'Product Details', Path: '/details' },
-      { Title: 'Cart', Path: '/cart' },
-      { Title: 'Checkout', Path: '/checkout' },
-      { Title: 'Contact', Path: '/contact' },
+      { Title: 'الرئيسية', Path: '/home' },
+      { Title: 'من نحن', Path: '/about' },
+      { Title: 'تفاصيل المنتج', Path: '/details' },
+      { Title: 'السلة', Path: '/cart' },
+      { Title: 'الدفع', Path: '/checkout' },
+      { Title: 'اتصل بنا', Path: '/contact' },
     ];
   }
 
-  // Wrapper for the UI button
   toggleDarkMode() {
     this.themeService.toggleTheme();
   }

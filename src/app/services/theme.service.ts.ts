@@ -10,7 +10,9 @@ export class ThemeService {
 
   // Using a Signal to track the theme state globally
   currentTheme = signal<'light' | 'dark'>('dark');
-
+  IsLightMode() {
+    return this.currentTheme() === 'light';
+  }
   initTheme() {
     if (isPlatformBrowser(this.platformId)) {
       const savedTheme = (localStorage.getItem('theme') as 'light' | 'dark') || 'dark';

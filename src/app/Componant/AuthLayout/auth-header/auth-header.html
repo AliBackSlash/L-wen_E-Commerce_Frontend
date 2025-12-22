@@ -10,10 +10,8 @@
       <div class="d-flex py-3 align-items-center justify-content-between">
 
         <!-- Logo -->
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="../../../../../public/logo.jpg" alt="">
-          <h1 class="sitename">Löwen</h1>
+        <a [routerLink]="['/home']">
+          <img src="logo.png" alt="Fashion Store Logo" class="logo">
         </a>
 
         <!-- Search -->
@@ -28,7 +26,10 @@
 
         <!-- Actions -->
         <div class="header-actions d-flex align-items-center justify-content-end">
-
+          <button class="header-action-btn" (click)="toggleDarkMode()" type="button" title="Toggle Dark Mode">
+            <i class="bi"
+              [ngClass]="{'bi-sun': !this.themeService.IsLightMode(), 'bi-moon': this.themeService.IsLightMode()}"></i>
+          </button>
           <!-- Mobile Search Toggle -->
           <button (click)="SSB()" class="header-action-btn mobile-search-toggle d-xl-none" type="button"
             data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
@@ -46,67 +47,60 @@
                 <p class="mb-0">Access account &amp; manage orders</p>
               </div>
               <div class="dropdown-body">
-                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                <a class="dropdown-item d-flex align-items-center" [routerLink]="['/account']">
                   <i class="bi bi-person-circle mx-2"></i>
                   <span>My Profile</span>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                <a class="dropdown-item d-flex align-items-center" [routerLink]="['/account/orders']">
                   <i class="bi bi-bag-check mx-2"></i>
                   <span>My Orders</span>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                <a class="dropdown-item d-flex align-items-center" [routerLink]="['/account/wishlist']">
                   <i class="bi bi-heart mx-2"></i>
                   <span>My Wishlist</span>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                <a class="dropdown-item d-flex align-items-center" [routerLink]="['/account/settings'] ">
                   <i class="bi bi-gear mx-2"></i>
                   <span>Settings</span>
                 </a>
               </div>
               <div class="dropdown-footer">
-                <a href="register.html" class="btn btn-primary w-100 mb-2">Sign In</a>
-                <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
+                <a [routerLink]="['/login']" class="btn btn-primary w-100 mb-2">Sign In</a>
+                <a [routerLink]="['/register']" class="btn btn-outline-primary w-100">Register</a>
               </div>
             </div>
           </div>
 
           <!-- Wishlist -->
-          <a href="account.html" class="header-action-btn d-none d-md-block">
+          <a [routerLink]="['/account/wishlist']" class="header-action-btn ">
             <i class="bi bi-heart"></i>
             <span class="badge">0</span>
           </a>
 
           <!-- Cart -->
-          <a href="cart.html" class="header-action-btn">
+          <a [routerLink]="['/cart']" class="header-action-btn">
             <i class="bi bi-cart3"></i>
             <span class="badge">3</span>
           </a>
 
           <!-- Mobile Navigation Toggle -->
-          <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+          <i (click)="SMN()" class="mobile-nav-toggle bi bi-list me-0"></i>
 
         </div>
       </div>
     </div>
   </div>
 
+
   <!-- Navigation -->
-  <div class="header-nav show">
+  <div class="header-nav">
     <div class="container-fluid container-xl position-relative">
       <nav id="navmenu" class="navmenu">
         <ul>
-          <!-- @for (item of NavUrls; track $index) {
-            <li><a [routerLink]="item.Path" routerLinkActive="active" class="link-underline">{{item.Title}}</a></li>
-          } -->
-          <li><a href="index.html" class="active link-underli ">Home</a></li>
-          <li><a href="about.html" class="link-underline">About</a></li>
-          <li><a href="category.html" class="link-underline">Category</a></li>
-          <li><a href="product-details.html" class="link-underline">Product Details</a></li>
-          <li><a href="cart.html" class="link-underline">Cart</a></li>
-          <li><a href="checkout.html" class="link-underline">Checkout</a></li>
-
-          <li><a href="contact.html" class="link-underline">Contact</a></li>
-
+          @for (item of NavUrls; track $index) {
+          <li><a [routerLink]="item.Path" routerLinkActive="active" class="nav-link">{{item.Title}}</a>
+          </li>
+          }
         </ul>
       </nav>
     </div>
@@ -125,13 +119,17 @@
       </form>
     </div>
   </div>
-
+  <!-- Mobile Navigation -->
+  <div class="header-nav-mobile d-none " [ngClass]="{'d-block:': ShowMobileNav(), 'd-none': !ShowMobileNav()}">
+    <div class="container-fluid container-xl position-relative">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          @for (item of NavUrls; track $index) {
+          <li><a [routerLink]="item.Path" routerLinkActive="active" class="nav-link">{{item.Title}}</a>
+          </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
-
-<nav class="navbar border-bottom px-3">
-  <span class="navbar-brand"></span>
-
-  <button (click)="toggleDarkMode()" class="btn btn-sm btn-outline-secondary">
-    تغيير الوضع
-  </button>
-</nav>

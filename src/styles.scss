@@ -1,12 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-/**
-* Template Name: NiceShop
-* Template URL: https://bootstrapmade.com/niceshop-bootstrap-ecommerce-template/
-* Updated: Jul 25 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 @charset "UTF-8";
 
 /*--------------------------------------------------------------
@@ -28,7 +19,7 @@
 :root,
 [data-bs-theme='light'] {
   --background-color: #ffffff;
-  --default-color: #444444;
+  --default-color: #000000;
   --heading-color: #000000;
   --accent-color: #000000;
   --surface-color: #ffffff;
@@ -44,12 +35,18 @@
 }
 
 [data-bs-theme='dark'] {
-  --background-color: #000000; /* خلفية الصفحة */
-  --default-color: #e0e0e0; /* لون النص الأساسي */
-  --heading-color: #ffffff; /* لون العناوين */
-  --accent-color: #000000; /* لون الأزرار والروابط */
-  --surface-color: #000000; /* لون الكروت والعناصر المرفوعة */
-  --contrast-color: #ffffff; /* لون النص على الأزرار والعناصر المرفوعة */
+  --background-color: #000000;
+  /* خلفية الصفحة */
+  --default-color: #e0e0e0;
+  /* لون النص الأساسي */
+  --heading-color: #ffffff;
+  /* لون العناوين */
+  --accent-color: #121212;
+  /* لون الأزرار والروابط */
+  --surface-color: #000000;
+  /* لون الكروت والعناصر المرفوعة */
+  --contrast-color: #ffffff;
+  /* لون النص على الأزرار والعناصر المرفوعة */
 
   /* Nav Menu Dark */
   --nav-color: rgba(255, 255, 255, 0.8);
@@ -67,7 +64,6 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  /* مهم جداً: نعومة عند التبديل بين الأوضاع */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -88,7 +84,6 @@ a {
 }
 
 a:hover {
-  /* استخدام دالة دمج الألوان للحصول على تأثير خفيف */
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
@@ -102,7 +97,6 @@ a:hover {
 }
 
 .dark-background {
-  /* إعادة تعريف المتغيرات محلياً لهذا القسم فقط */
   --background-color: #000000;
   --default-color: #ffffff;
   --heading-color: #ffffff;
@@ -118,10 +112,8 @@ a:hover {
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(
-    var(--accent-color) 50%,
-    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
-  );
+  background: radial-gradient(var(--accent-color) 50%,
+      color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -188,6 +180,7 @@ a:hover {
     transform: scale(0.6, 0.6);
     opacity: 1;
   }
+
   100% {
     transform: scale(1, 1);
     opacity: 0;
@@ -239,6 +232,7 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
