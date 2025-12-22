@@ -1,0 +1,134 @@
+<header id="header" class="header sticky-top">
+  <!-- Top Bar -->
+  <div class="top-bar">
+
+  </div>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container-fluid container-xl">
+      <div class="d-flex py-3 align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="../../../../../public/logo.jpg" alt="">
+          <h1 class="sitename">Löwen</h1>
+        </a>
+
+        <!-- Search -->
+        <form class="search-form desktop-search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Actions -->
+        <div class="header-actions d-flex align-items-center justify-content-end">
+
+          <!-- Mobile Search Toggle -->
+          <button (click)="SSB()" class="header-action-btn mobile-search-toggle d-xl-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <!-- Account -->
+          <div class="dropdown account-dropdown">
+            <button (click)="SAD()" class="header-action-btn" data-bs-toggle="dropdown">
+              <i class="bi bi-person"></i>
+            </button>
+            <div class="dropdown-menu" [ngClass]="{'show': ShowAccountDropdown()}">
+              <div class="dropdown-header">
+                <h6>Welcome to <span class="sitename">FashionStore</span></h6>
+                <p class="mb-0">Access account &amp; manage orders</p>
+              </div>
+              <div class="dropdown-body">
+                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                  <i class="bi bi-person-circle mx-2"></i>
+                  <span>My Profile</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                  <i class="bi bi-bag-check mx-2"></i>
+                  <span>My Orders</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                  <i class="bi bi-heart mx-2"></i>
+                  <span>My Wishlist</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="account.html">
+                  <i class="bi bi-gear mx-2"></i>
+                  <span>Settings</span>
+                </a>
+              </div>
+              <div class="dropdown-footer">
+                <a href="register.html" class="btn btn-primary w-100 mb-2">Sign In</a>
+                <a href="login.html" class="btn btn-outline-primary w-100">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wishlist -->
+          <a href="account.html" class="header-action-btn d-none d-md-block">
+            <i class="bi bi-heart"></i>
+            <span class="badge">0</span>
+          </a>
+
+          <!-- Cart -->
+          <a href="cart.html" class="header-action-btn">
+            <i class="bi bi-cart3"></i>
+            <span class="badge">3</span>
+          </a>
+
+          <!-- Mobile Navigation Toggle -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="header-nav show">
+    <div class="container-fluid container-xl position-relative">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active link-underli ">Home</a></li>
+          <li><a href="about.html" class="link-underline">About</a></li>
+          <li><a href="category.html" class="link-underline">Category</a></li>
+          <li><a href="product-details.html" class="link-underline">Product Details</a></li>
+          <li><a href="cart.html" class="link-underline">Cart</a></li>
+          <li><a href="checkout.html" class="link-underline">Checkout</a></li>
+
+          <li><a href="contact.html" class="link-underline">Contact</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Search Form -->
+  <div class="collapse" [ngClass]="{'show': ShowSearchBox()}" id="mobileSearch">
+    <div class="container">
+      <form class="search-form">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for products">
+          <button class="btn" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</header>
+
+<nav class="navbar border-bottom px-3">
+  <span class="navbar-brand"></span>
+
+  <button (click)="toggleDarkMode()" class="btn btn-sm btn-outline-secondary">
+    تغيير الوضع
+  </button>
+</nav>

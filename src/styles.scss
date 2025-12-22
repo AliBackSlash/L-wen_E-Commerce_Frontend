@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+/**
+* Template Name: NiceShop
+* Template URL: https://bootstrapmade.com/niceshop-bootstrap-ecommerce-template/
+* Updated: Jul 25 2025 with Bootstrap v5.3.7
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+# Global Settings & Fonts
+--------------------------------------------------------------*/
+:root {
+  --default-font: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --heading-font: 'Montserrat', sans-serif;
+  --nav-font: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# Color System (Light & Dark Mode)
+--------------------------------------------------------------*/
+
+:root,
+[data-bs-theme='light'] {
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #000000;
+  --accent-color: #000000;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  /* Nav Menu Light */
+  --nav-color: rgb(255, 255, 255);
+  --nav-hover-color: #d0cbcb;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --nav-dropdown-hover-color: #252223;
+}
+
+[data-bs-theme='dark'] {
+  --background-color: #000000; /* خلفية الصفحة */
+  --default-color: #e0e0e0; /* لون النص الأساسي */
+  --heading-color: #ffffff; /* لون العناوين */
+  --accent-color: #000000; /* لون الأزرار والروابط */
+  --surface-color: #000000; /* لون الكروت والعناصر المرفوعة */
+  --contrast-color: #ffffff; /* لون النص على الأزرار والعناصر المرفوعة */
+
+  /* Nav Menu Dark */
+  --nav-color: rgba(255, 255, 255, 0.8);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #1e1e1e;
+  --nav-dropdown-background-color: #252525;
+  --nav-dropdown-color: #e0e0e0;
+  --nav-dropdown-hover-color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# General Styling
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  /* مهم جداً: نعومة عند التبديل بين الأوضاع */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  /* استخدام دالة دمج الألوان للحصول على تأثير خفيف */
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Helper Classes
+--------------------------------------------------------------*/
+.light-background {
+  background-color: var(--background-color) !important;
+  color: var(--default-color) !important;
+}
+
+.dark-background {
+  /* إعادة تعريف المتغيرات محلياً لهذا القسم فقط */
+  --background-color: #000000;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #232424;
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+/*--------------------------------------------------------------
+# Specific Components (Play Button & Forms)
+--------------------------------------------------------------*/
+/* Pulsating Play Button */
+.pulsating-play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.pulsating-play-btn:before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-play-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.pulsating-play-btn:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.pulsating-play-btn:hover:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+.pulsating-play-btn:hover:after {
+  border-left: 15px solid var(--accent-color);
+  transform: scale(20);
+}
+
+@keyframes pulsate-play-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/* PHP Email Form Messages */
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
