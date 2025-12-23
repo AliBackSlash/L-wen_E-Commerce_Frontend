@@ -1,1 +1,76 @@
-<p>login works!</p>
+<!-- Page Title -->
+<div class="page-title light-background">
+  <div class="container flex-column  d-lg-flex justify-content-start">
+    <h1 class="mb-2 py-3 mb-lg-0">تسجيل الدخول</h1>
+    <nav aria-label="breadcrumb p-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item "><a class="nav-link" [routerLink]="''">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">تسجيل الدخول</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
+
+<!-- Login Section -->
+<section id="login" class="login section my-5">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="auth-container" data-aos="fade-in" data-aos-delay="200">
+
+          <!-- Login Form -->
+          <div class="auth-form login-form active">
+            <div class="form-header">
+              <h3>مرحبًا بعودتك</h3>
+              <p>قم تسجيل الدخول إلى حسابك</p>
+            </div>
+
+            <form class="auth-form-content">
+              <div class="input-group mb-3">
+                <span class="input-icon">
+                  <i class="bi bi-envelope"></i>
+                </span>
+                <input type="email" class="form-control" placeholder="عنوان البريد الإلكتروني" autocomplete="email">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-icon">
+                  <i class="bi bi-lock"></i>
+                </span>
+                <input type="password" class="form-control" placeholder="كلمة المرور" autocomplete="current-password">
+                <span class="password-toggle">
+                  <i class="bi bi-eye"></i>
+                </span>
+              </div>
+              <div class="form-options mb-4">
+                <div class="remember-me">
+                  <input type="checkbox" id="rememberLogin">
+                  <label for="rememberLogin">تذكرنى</label>
+                </div>
+                <a href="#" class="forgot-password">هل نسيت كلمة السر؟</a>
+              </div>
+              <button type="submit" class="auth-btn primary-btn mb-3">
+                <i class="bi bi-arrow-right"></i>
+                تسجيل الدخول
+              </button>
+              <div class="login-link text-center">
+                <p>ليس لديك حساب؟<a [routerLink]="'/register'">إنشاء
+                    حساب</a></p>
+              </div>
+            </form>
+            <div class="decorative-elements">
+              <div class="circle circle-1"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-3"></div>
+              <div class="square square-1"></div>
+              <div class="square square-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

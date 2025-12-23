@@ -8,8 +8,18 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        loadComponent: () => import('./Pages/home/home').then((c) => c.Home),
+        title: 'الصفحة الرئيسية',
+      },
+      {
+        path: 'register',
         loadComponent: () => import('./Pages/register/register').then((c) => c.Register),
-        title: 'Register',
+        title: 'إنشاء حساب',
+      },
+      {
+        path: 'login',
+        loadComponent: () => import('./Pages/login/login').then((c) => c.Login),
+        title: 'تسجيل الدخول',
       },
     ],
   },

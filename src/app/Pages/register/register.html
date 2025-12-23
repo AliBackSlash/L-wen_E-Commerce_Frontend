@@ -1,1 +1,77 @@
-<p>register works!</p>
+<!-- Page Title -->
+<div class="page-title light-background">
+  <div class="container flex-column  d-lg-flex justify-content-start">
+    <h1 class="mb-2 py-3 mb-lg-0">إضافة حساب</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item "><a class="nav-link" [routerLink]="''">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">إضافة حساب</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- End Page Title -->
+
+<!-- Register Section -->
+<section id="register" class="register section" dir="rtl">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="registration-form-wrapper">
+          <div class="form-header text-center">
+            <h2>أنشئ حساب</h2>
+            <p>أنشئ حسابك وابدأ التسوق معنا</p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <form action="register.php" method="post">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name"
+                    autocomplete="name">
+                  <label for="fullName">اسم المستخدم</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
+                    autocomplete="email">
+                  <label for="email">عنوان البريد الإلكتروني</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                    minlength="8" autocomplete="new-password">
+                  <label for="password">كلمة المرور</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                    placeholder="Confirm Password" minlength="8" autocomplete="new-password">
+                  <label for="confirmPassword">تأكيد كلمة المرور</label>
+                </div>
+
+                <div class="d-grid mb-4">
+                  <button type="submit" class="btn btn-register">إنشاء حساب</button>
+                </div>
+
+                <div class="login-link text-center">
+                  <p>هل لديك حساب بالفعل؟ <a [routerLink]="'/login'">تسجيل الدخول</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="decorative-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="square square-1"></div>
+            <div class="square square-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Register Section -->

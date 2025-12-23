@@ -237,3 +237,26 @@ a:hover {
     transform: rotate(360deg);
   }
 }
+
+
+
+.form-control:focus {
+  border-color: #0d6efd;
+
+}
+
+.form-floating>label {
+  right: 0;
+}
+
+.form-control:focus~label {
+  color: #0d6efd !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+  transform-origin: top right;
+}
