@@ -14,6 +14,7 @@ export class Home {
   ngOnInit(): void {
     this.BestSaleProducts = [
       {
+        productId: '1',
         productName: 'هودي لوفن',
         productDescription:
           'استمتع بالراحة القصوى مع هودي لوفن الكلاسيكي هودي عصري مريح مصنوع من القطن الطبيعي',
@@ -25,6 +26,8 @@ export class Home {
         productColors: ['#131212ff', '#FFFFFF', '#fc0fe9ff'],
       },
       {
+        productId: '2',
+
         productName: 'هودي لوفن',
         productDescription:
           'استمتع بالراحة القصوى مع هودي لوفن الكلاسيكي هودي عصري مريح مصنوع من القطن الطبيعي',
@@ -36,6 +39,8 @@ export class Home {
         productColors: ['#131212ff', '#FFFFFF', '#fc0fe9ff'],
       },
       {
+        productId: '3',
+
         productName: 'هودي لوفن',
         productDescription:
           'استمتع بالراحة القصوى مع هودي لوفن الكلاسيكي هودي عصري مريح مصنوع من القطن الطبيعي',
@@ -47,6 +52,8 @@ export class Home {
         productColors: ['#131212ff', '#FFFFFF', '#fc0fe9ff'],
       },
       {
+        productId: '4',
+
         productName: 'هودي لوفن',
         productDescription:
           'استمتع بالراحة القصوى مع هودي لوفن الكلاسيكي هودي عصري مريح مصنوع من القطن الطبيعي',

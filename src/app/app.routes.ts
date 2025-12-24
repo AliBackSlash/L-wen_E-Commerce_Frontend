@@ -21,6 +21,12 @@ export const routes: Routes = [
         loadComponent: () => import('./Pages/login/login').then((c) => c.Login),
         title: 'تسجيل الدخول',
       },
+      {
+        path: 'product/:id',
+        loadComponent: () =>
+          import('./Pages/product-details/product-details').then((c) => c.ProductDetails),
+        title: 'تفاصيل المنتج',
+      },
     ],
   },
 ];

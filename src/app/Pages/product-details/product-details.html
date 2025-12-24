@@ -1,0 +1,348 @@
+<!-- Page Title -->
+<div class="page-title light-background">
+  <div class="container flex-column  d-lg-flex justify-content-start">
+    <h1 class="mb-2 py-3 mb-lg-0">تفاصيل المنتج</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item "><a class="nav-link" [routerLink]="''">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">تفاصيل المنتج</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
+
+<!-- Product Details Section -->
+<section id="product-details" class="product-details section pt-5 ">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row g-4">
+      <!-- Product Gallery -->
+      <div class="col-lg-7" data-aos="zoom-in" data-aos-delay="150">
+        <div class="product-gallery">
+          <div class="main-showcase">
+            <div class="image-zoom-container">
+              <img src="image.png" alt="Product Main" class="img-fluid main-product-image drift-zoom"
+                id="main-product-image" data-zoom="assets/img/product/product-details-6.webp">
+
+              <div class="image-navigation">
+                <button class="nav-arrow prev-image image-nav-btn prev-image" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+                <button class="nav-arrow next-image image-nav-btn next-image" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumbnail-grid">
+            <div class="thumbnail-wrapper thumbnail-item active" data-image="assets/img/product/product-details-6.webp">
+              <img src="image.png" alt="View 1" class="img-fluid">
+            </div>
+            <div class="thumbnail-wrapper thumbnail-item active" data-image="assets/img/product/product-details-7.webp">
+              <img src="image2.png" alt="View 2" class="img-fluid">
+            </div>
+            <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/product/product-details-8.webp">
+              <img src="image3.png" alt="View 3" class="img-fluid">
+            </div>
+            <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/product/product-details-4.webp">
+              <img src="image4.png" alt="View 4" class="img-fluid">
+            </div>
+            <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/product/product-details-5.webp">
+              <img src="image5.png" alt="View 5" class="img-fluid">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+        <div class="product-details">
+          <div class="product-badge-container">
+            <span class="badge-category">ملابس</span>
+            <div class="rating-group">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <span class="review-text">(127 تقييمًا)</span>
+            </div>
+          </div>
+
+          <h1 class="product-name">هودي لوفن</h1>
+
+          <div class="pricing-section">
+            <div class="price-display">
+              <span class="sale-price">650ج</span>
+              <span class="regular-price">1000ج</span>
+            </div>
+            <div class="savings-info">
+              <span class="save-amount">وفر 350ج</span>
+              <span class="discount-percent">(خصم 25%)</span>
+            </div>
+          </div>
+
+          <div class="product-description">
+            <p>استمتع بالراحة القصوى مع هودي لوفن الكلاسيكي هودي عصري مريح مصنوع من القطن الطبيعي</p>
+          </div>
+
+          <div class="availability-status">
+            <div class="stock-indicator">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="stock-text">متاح</span>
+            </div>
+            <div class="quantity-left">لم يتبق سوى 18 قطعة</div>
+          </div>
+
+          <!-- Product Variants -->
+          <div class="variant-section">
+            <div class="color-selection">
+              <label class="variant-label">الألوان المتوفرة:</label>
+              <div class="color-grid">
+                <div class="color-chip active" data-color="Midnight Black"
+                  style="background: linear-gradient(135deg, #1a1a1a, #000);">
+                  <span class="selection-check"><i class="bi bi-check"></i></span>
+                </div>
+                <div class="color-chip" data-color="Pearl White"
+                  style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                  <span class="selection-check"><i class="bi bi-check"></i></span>
+                </div>
+                <div class="color-chip" data-color="Ocean Blue"
+                  style="background: linear-gradient(135deg, #0066cc, #004499);">
+                  <span class="selection-check"><i class="bi bi-check"></i></span>
+                </div>
+                <div class="color-chip" data-color="Forest Green"
+                  style="background: linear-gradient(135deg, #28a745, #155724);">
+                  <span class="selection-check"><i class="bi bi-check"></i></span>
+                </div>
+              </div>
+              <div class="selected-variant">مختار: <span>أسود</span></div>
+            </div>
+          </div>
+
+          <!-- Purchase Options -->
+          <div class="purchase-section">
+            <div class="quantity-control">
+              <label class="control-label">كمية:</label>
+              <div class="quantity-input-group">
+                <div class="quantity-selector">
+                  <button class="quantity-btn decrease" type="button">
+                    <i class="bi bi-dash"></i>
+                  </button>
+                  <input type="number" class="quantity-input" value="1" min="1" max="18">
+                  <button class="quantity-btn increase" type="button">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn primary-action">
+                <i class="bi bi-bag-plus"></i>
+                أضف إلى السلة
+              </button>
+              <button class="btn secondary-action">
+                <i class="bi bi-lightning"></i>
+                اشتري الآن
+              </button>
+              <button class="btn icon-action" title="Add to Wishlist">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Benefits List -->
+          @if(false)
+          {
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <i class="bi bi-truck"></i>
+              <span>Free delivery on orders over $75</span>
+            </div>
+            <div class="benefit-item">
+              <i class="bi bi-arrow-clockwise"></i>
+              <span>45-day hassle-free returns</span>
+            </div>
+            <div class="benefit-item">
+              <i class="bi bi-shield-check"></i>
+              <span>3-year manufacturer warranty</span>
+            </div>
+            <div class="benefit-item">
+              <i class="bi bi-headset"></i>
+              <span>24/7 customer support available</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="container section-title mt-5 " data-aos="fade-up">
+      <h2 class="m-0">التقييمات</h2>
+    </div>
+    <!-- Information Tabs -->
+    <div class="row mb-5" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-12">
+        <div class="info-tabs-container">
+
+
+          <!-- Reviews Tab -->
+          <div class="tab-pane fade active show " id="ecommerce-product-details-5-customer-reviews">
+            <div class="reviews-content">
+              <div class="reviews-header">
+                <div class="rating-overview">
+                  <div class="average-score">
+                    <div class="score-display">4.6</div>
+                    <div class="score-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <div class="total-reviews">127 تقييمًا من العملاء</div>
+                  </div>
+
+                  <div class="rating-distribution">
+                    <div class="rating-row">
+                      <span class="stars-label">★5</span>
+                      <div class="progress-container">
+                        <div class="progress-fill" style="width: 68%;"></div>
+                      </div>
+                      <span class="count-label">86</span>
+                    </div>
+                    <div class="rating-row">
+                      <span class="stars-label">★4</span>
+                      <div class="progress-container">
+                        <div class="progress-fill" style="width: 22%;"></div>
+                      </div>
+                      <span class="count-label">28</span>
+                    </div>
+                    <div class="rating-row">
+                      <span class="stars-label">★3</span>
+                      <div class="progress-container">
+                        <div class="progress-fill" style="width: 6%;"></div>
+                      </div>
+                      <span class="count-label">8</span>
+                    </div>
+                    <div class="rating-row">
+                      <span class="stars-label">★2</span>
+                      <div class="progress-container">
+                        <div class="progress-fill" style="width: 3%;"></div>
+                      </div>
+                      <span class="count-label">4</span>
+                    </div>
+                    <div class="rating-row">
+                      <span class="stars-label">★1</span>
+                      <div class="progress-container">
+                        <div class="progress-fill" style="width: 1%;"></div>
+                      </div>
+                      <span class="count-label">1</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="write-review-cta">
+                  <h4>شارك تجربتك</h4>
+                  <p>ساعد الآخرين على اتخاذ قرارات مدروسة</p>
+                  <button class="btn review-btn">اكتب مراجعة</button>
+                </div>
+              </div>
+
+              <div class="customer-reviews-list">
+
+
+                <div class="review-card">
+                  <div class="reviewer-profile">
+                    <img src="image6.jpg" alt="Customer" class="profile-pic">
+                    <div class="profile-details">
+                      <div class="customer-name">علي</div>
+                      <div class="review-meta">
+                        <div class="review-stars">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                        </div>
+                        <span class="review-date">15 مارس 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="review-headline">قيمة رائعة</h5>
+                  <div class="review-text">
+                    <p>لا أحد يحتقر اللذة أو يكرهها أو يهرب منها لذاتها، بل لأن آلاماً شديدة تلاحق من لا يعرفون كيف
+                      يتبعون اللذة بالعقل. أنا
+                      راضٍ تماماً عن الشراء.</p>
+                  </div>
+
+                </div>
+                <div class="review-card">
+                  <div class="reviewer-profile">
+                    <img src="image8.jpg" alt="Customer" class="profile-pic">
+                    <div class="profile-details">
+                      <div class="customer-name">Ahmed</div>
+                      <div class="review-meta">
+                        <div class="review-stars">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                        </div>
+                        <span class="review-date">15 مارس 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="review-headline">قيمة رائعة</h5>
+                  <div class="review-text">
+                    <p>لا أحد يحتقر اللذة أو يكرهها أو يهرب منها لذاتها، بل لأن آلاماً شديدة تلاحق من لا يعرفون كيف
+                      يتبعون اللذة بالعقل. أنا
+                      راضٍ تماماً عن الشراء.</p>
+                  </div>
+
+                </div>
+                <div class="review-card">
+                  <div class="reviewer-profile">
+                    <img src="image7.jpg" alt="Customer" class="profile-pic">
+                    <div class="profile-details">
+                      <div class="customer-name">فارس</div>
+                      <div class="review-meta">
+                        <div class="review-stars">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                        </div>
+                        <span class="review-date">15 مارس 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="review-headline">قيمة رائعة</h5>
+                  <div class="review-text">
+                    <p>لا أحد يحتقر اللذة أو يكرهها أو يهرب منها لذاتها، بل لأن آلاماً شديدة تلاحق من لا يعرفون كيف
+                      يتبعون اللذة بالعقل. أنا
+                      راضٍ تماماً عن الشراء.</p>
+                  </div>
+
+                </div>
+
+
+                <div class="load-more-section">
+                  <button class="btn load-more-reviews">عرض المزيد من التقييمات</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Product Details Section -->

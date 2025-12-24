@@ -105,11 +105,12 @@
                 <i class="bi bi-zoom-in"></i>
               </button>
             </div>
-            <button class="cart-btn"><a class="nav-link" [routerLink]="'/product-details'">تفاصيل المنتج</a></button>
+            <button class="cart-btn"><a class="nav-link" [routerLink]="'/product/' + product.productId">تفاصيل
+                المنتج</a></button>
           </div>
           <div class="product-info">
-            <div class="product-name"><a class="nav-link" [routerLink]="'/product-details'">{{ product.productName
-                }}</a></div>
+            <div class="product-name"><a class="nav-link" [routerLink]="'/product/' + product.productId">{{
+                product.productName }}</a></div>
             <h4 class="product-description">{{ product.productDescription }}</h4>
             <div class="product-rating">
               <div class="stars">
@@ -170,11 +171,12 @@
                 <i class="bi bi-zoom-in"></i>
               </button>
             </div>
-            <button class="cart-btn"><a class="nav-link" [routerLink]="'/product-details'">تفاصيل المنتج</a></button>
+            <button class="cart-btn"><a class="nav-link" [routerLink]="'/product/' + product.productId">تفاصيل
+                المنتج</a></button>
           </div>
           <div class="product-info">
-            <div class="product-name"><a class="nav-link" [routerLink]="'/product-details'">{{ product.productName
-                }}</a></div>
+            <div class="product-name"><a class="nav-link"
+                [routerLink]="'/product/' + product.productId">{{product.productName}}</a></div>
             <h4 class="product-description">{{ product.productDescription }}</h4>
             <div class="product-rating">
               <div class="stars">
