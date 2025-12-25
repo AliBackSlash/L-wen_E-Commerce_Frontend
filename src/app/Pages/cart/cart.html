@@ -1,0 +1,176 @@
+<!-- Page Title -->
+<div class="page-title light-background">
+  <div class="container flex-column  d-lg-flex justify-content-start">
+    <h1 class="mb-2 py-3 mb-lg-0">عربة التسوق</h1>
+    <nav aria-label="breadcrumb p-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item "><a class="nav-link" [routerLink]="''">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">عربة التسوق</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
+
+<!-- Cart Section -->
+<section id="cart" class="cart section my-5">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row">
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="cart-items">
+          <div class="cart-header d-none d-lg-block">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <h5>منتج</h5>
+              </div>
+              <div class="col-lg-2 text-center">
+                <h5>السعر</h5>
+              </div>
+              <div class="col-lg-2 text-center">
+                <h5>كمية</h5>
+              </div>
+              <div class="col-lg-2 text-center">
+                <h5>المجموع</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Item 1 -->
+          @for (item of ['','','']; track $index) {
+          <div class="cart-item">
+            <div class="row align-items-center">
+              <div class="col-lg-6 col-12 mt-3 mt-lg-0 mb-lg-0 mb-3">
+                <div class="product-info d-flex align-items-center">
+                  <div class="product-image">
+                    <img src="image2.png" alt="Product" loading="lazy">
+                  </div>
+                  <div class="product-details">
+                    <h6 class="product-title">مرحباً، إنه ألم كبير.</h6>
+                    <div class="product-meta">
+                      <span class="product-color">اللون: أسود</span>
+                      <span class="product-size">الحجم: M</span>
+                    </div>
+                    <button class="remove-item" type="button">
+                      <i class="bi bi-trash"></i> حذف
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
+                <div class="price-tag">
+                  <span class="current-price">550ج</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
+                <div class="quantity-selector">
+                  <button class="quantity-btn decrease">
+                    <i class="bi bi-dash"></i>
+                  </button>
+                  <input type="number" class="quantity-input" value="1" min="1" max="10">
+                  <button class="quantity-btn increase">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
+                <div class="item-total">
+                  <span>550ج</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+          <!-- End Cart Item -->
+
+
+
+          <div class="cart-actions">
+            <div class="row ">
+              <div class="coupon-form mx-3 ">
+                <div class="input-group d-flex">
+                  <input type="text" class="form-control" placeholder="رمز القسيمة">
+                  <button class="btn btn-outline-accent" type="button">استخدم القسيمة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+        <div class="cart-summary">
+          <h4 class="summary-title">ملخص الطلب</h4>
+
+          <div class="summary-item">
+            <span class="summary-label">المجموع الفرعي</span>
+            <span class="summary-value">552.55ج</span>
+          </div>
+
+          <div class="summary-item shipping-item">
+            <span class="summary-label">الشحن</span>
+            <div class="shipping-options">
+              <div class="form-check text-end">
+                <input class="form-check-input" type="radio" name="shipping" id="standard" checked="">
+                <label class="form-check-label" for="standard">
+                  التوصيل العادي - 4.99ج
+                </label>
+              </div>
+              <div class="form-check text-end">
+                <input class="form-check-input" type="radio" name="shipping" id="express">
+                <label class="form-check-label" for="express">
+                  التوصيل السريع - 12.99ج
+                </label>
+              </div>
+              <div class="form-check text-end">
+                <input class="form-check-input" type="radio" name="shipping" id="free">
+                <label class="form-check-label" for="free">
+                  التوصيل المجاني (الطلبات فوق 300ج)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-item">
+            <span class="summary-label">ضريبة</span>
+            <span class="summary-value">27.00ج</span>
+          </div>
+
+          <div class="summary-item discount">
+            <span class="summary-label">تخفيض</span>
+            <span class="summary-value">-0.00ج</span>
+          </div>
+
+          <div class="summary-total">
+            <span class="summary-label">المجموع</span>
+            <span class="summary-value">552.55ج</span>
+          </div>
+
+          <div class="checkout-button">
+            <a [routerLink]="''" class="btn btn-accent w-100">
+              الشروع في الخروج <i class="bi bi-arrow-left"></i>
+            </a>
+          </div>
+
+          <div class="continue-shopping">
+            <a [routerLink]="''" class="btn btn-link w-100">
+              <i class="bi bi-arrow-right"></i> تابع التسوق
+            </a>
+          </div>
+
+          <div class="payment-methods">
+            <p class="payment-title">نقبل</p>
+            <div class="payment-icons">
+              <i class="bi bi-credit-card"></i>
+              <i class="bi bi-paypal"></i>
+              <i class="bi bi-wallet2"></i>
+              <i class="bi bi-bank"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Cart Section -->

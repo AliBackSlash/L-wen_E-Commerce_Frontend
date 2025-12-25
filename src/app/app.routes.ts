@@ -27,6 +27,16 @@ export const routes: Routes = [
           import('./Pages/product-details/product-details').then((c) => c.ProductDetails),
         title: 'تفاصيل المنتج',
       },
+      {
+        path: 'cart',
+        loadComponent: () => import('./Pages/cart/cart').then((c) => c.Cart),
+        title: 'عربة التسوق',
+      },
+      {
+        path: '**',
+        loadComponent: () => import('./Pages/not-found/not-found').then((c) => c.NotFound),
+        title: 'صفحة غير موجودة',
+      },
     ],
   },
 ];
